@@ -1,0 +1,77 @@
+{
+  "name": "ErrorSchema",
+  "type": "record",
+  "fields": [
+    {
+      "name": "sourcetype",
+      "type": "string"
+    },
+    {
+      "name": "event",
+      "type": {
+        "name": "Event",
+        "type": "record",
+        "fields": [
+          {
+            "name": "traceId",
+            "type": "string"
+          },
+          {
+            "name": "appVersion",
+            "type": "string"
+          },
+          {
+            "name": "environment",
+            "type": "string"
+          },
+          {
+            "name": "raiseIncident",
+            "type": "string"
+          },
+          {
+            "name": "businessGroup",
+            "type": "string"
+          },
+          {
+            "name": "appName",
+            "type": "string"
+          },
+          {
+            "name": "correlationId",
+            "type": "string"
+          },
+          {
+            "name": "threadName",
+            "type": "string"
+          },
+          {
+            "name": "content",
+            "type": {
+              "name": "Content",
+              "type": "record",
+              "fields": [
+                {
+                  "name": "errorType",
+                  "type": "string"
+                },
+                {
+                  "name": "errorMessage",
+                  "type": "string"
+                },
+                {
+                  "name": "errorCode",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          {
+            "name": "timestamp",
+            "type": "int",
+            "logicalType": "date"
+          }
+        ]
+      }
+    }
+  ]
+}
